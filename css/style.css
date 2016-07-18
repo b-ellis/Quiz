@@ -1,0 +1,55 @@
+
+h2{
+	text-align: center;
+}
+.logo{
+	width: 20%;
+}
+.start{
+	font-size: x-large;
+	display: block;
+	margin: 150px;
+	text-align: center;
+}
+.start-button{
+	font-size: medium;
+    border-radius: 8px;
+    background-color: whitesmoke;
+}
+.start-button:focus{
+	outline: none;
+}
+question{
+	margin: 150px;
+	text-align: center;
+}
+li{
+	list-style: none;
+	padding: 10px;
+	display: inline-block;
+}
+button{
+	font-size: medium;
+	padding: 10px;
+	border-radius: 8px;
+    background-color: whitesmoke;
+    display: initial;
+}
+button:focus{
+	outline: none;
+}
+.one{
+	display: none;
+}
+.two{
+	display: none;
+}
+.three{
+	display: none;
+}
+.four{
+	display: none;
+}
+.five{
+	display: none;
+}
