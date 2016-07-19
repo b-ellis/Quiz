@@ -33,10 +33,15 @@ button{
 	padding: 10px;
 	border-radius: 8px;
     background-color: whitesmoke;
-    display: initial;
+    display: inline-block;
+    margin: 20px;
 }
 button:focus{
 	outline: none;
+	background-color: mediumturquoise;
+}
+h3{
+	margin: 100px;
 }
 .one{
 	display: none;
