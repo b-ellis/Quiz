@@ -19,7 +19,7 @@ h2{
 .start-button:focus{
 	outline: none;
 }
-.question{
+#question{
 	display: none;
 	margin: 150px;
 	text-align: center;

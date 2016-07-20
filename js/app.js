@@ -31,7 +31,7 @@ $(document).ready(function() {
 
     $('.start-button').click(function(){ 
     $('.start').hide();
-    $('.question').show();
+    $('#question').show();
   //});
 
   var allQuestions = [question1, question2, question3, question4, question5];
