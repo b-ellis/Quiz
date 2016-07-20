@@ -19,11 +19,12 @@ h2{
 .start-button:focus{
 	outline: none;
 }
-question{
+.question{
+	display: none;
 	margin: 150px;
 	text-align: center;
 }
-li{
+ul{
 	list-style: none;
 	padding: 10px;
 	display: inline-block;
@@ -36,25 +37,14 @@ button{
     display: inline-block;
     margin: 20px;
 }
+.next:focus{
+	outline: none;
+	background-color: none;
+}
 button:focus{
 	outline: none;
 	background-color: mediumturquoise;
 }
 h3{
 	margin: 100px;
-}
-.one{
-	display: none;
-}
-.two{
-	display: none;
-}
-.three{
-	display: none;
-}
-.four{
-	display: none;
-}
-.five{
-	display: none;
 }
