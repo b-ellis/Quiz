@@ -41,6 +41,11 @@ $(document).ready(function() {
   function displayQuestion() {
     var currentQuestion = allQuestions[currentQuestionIndex];
     $('#question > h3').append(currentQuestion.text);
+    var possibleAnswers = currentQuestion.possibleAnswers;
+    for (var i=0; i<possibleAnswers.length; i++){
+      var listtag = "<li class=""> <button> </button>" + possibleAnswers[i] + "</li>";
+      $(".answers > ul").append(listtag);
+    }
   }
 
 });
