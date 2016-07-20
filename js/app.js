@@ -29,25 +29,21 @@ $(document).ready(function() {
     correctAnswer: 0
   };
 
-    $('.start-button').click(function(){ 
-    $('.start').hide();
-    $('#question').show();
-  //});
-
   var allQuestions = [question1, question2, question3, question4, question5];
   var currentQuestionIndex = 0;
 
-  displayQuestion();
+  $('.start-button').click(function(){
+    $('.start').hide();
+    $('#question').show();
+    displayQuestion();
+  });
 
   function displayQuestion() {
     var currentQuestion = allQuestions[currentQuestionIndex];
-    // display the current question
+    $('#question > h3').append(currentQuestion.text);
   }
+
 });
   //click event handler for answer choice {verify whether chosen answer is = correctAnswer in the question object}
 
   //click event handler for next button {move to next question}
-
-
-
-});
