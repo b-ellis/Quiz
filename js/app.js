@@ -38,14 +38,28 @@ $(document).ready(function() {
     displayQuestion();
   });
 
+  $('.next').click(function() {
+    
+  });
+
   function displayQuestion() {
     var currentQuestion = allQuestions[currentQuestionIndex];
+
     $('#question > h3').append(currentQuestion.text);
     var possibleAnswers = currentQuestion.possibleAnswers;
     for (var i=0; i<possibleAnswers.length; i++){
-      var listtag = "<li class=""> <button> </button>" + possibleAnswers[i] + "</li>";
+      var listtag = "<li class=\"" + i + "\"><button class = \"answerButton\"> </button>" + possibleAnswers[i] + "</li>";
       $(".answers > ul").append(listtag);
     }
+
+    $('.answerButton').click(function() {
+      var chosenIndex = $(this).parent('li').attr('class');
+      if (currentQuestion.correctAnswer === +chosenIndex) {
+        alert("Correct Answer ! click next to proceed!");
+      } else {
+        alert("Incorrect Answer! Try again!");
+      }
+    });
   }
 
 });
