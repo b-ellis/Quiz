@@ -6,10 +6,11 @@ $(document).ready(function() {
     correctAnswer: 1
   };
 
-  var question2 = Object.create(question1);
-  question2.text = "What year did keyboardist Page McConnell join the band Phish?";
-  question2.possibleAnswers = ["1983", "1986", "1985", "1988"];
-  question2.correctAnswer = 2;
+  var question2 = {
+  text: "What year did keyboardist Page McConnell join the band Phish?",
+  possibleAnswers: ["1983", "1986", "1985", "1988"],
+  correctAnswer: 2
+  };
 
   var question3 = {
     text: "Who is the Luthier that built Trey’s iconic guitar?",
@@ -38,28 +39,35 @@ $(document).ready(function() {
     displayQuestion();
   });
 
-  $('.next').click(function() {
-    
+  $('.next').click(function(){
+    var nextQuestion = currentQuestionIndex ++;
+    $('.answers > ul').html("")
+    $('.correct').html("")
+    displayQuestion();
   });
+
 
   function displayQuestion() {
     var currentQuestion = allQuestions[currentQuestionIndex];
 
-    $('#question > h3').append(currentQuestion.text);
+    $('#question > h3').html(currentQuestion.text);
     var possibleAnswers = currentQuestion.possibleAnswers;
     for (var i=0; i<possibleAnswers.length; i++){
-      var listtag = "<li class=\"" + i + "\"><button class = \"answerButton\"> </button>" + possibleAnswers[i] + "</li>";
+      var listtag = "<li class=\"" + i + "\"><button class = \"answerButton\"> </button>" + possibleAnswers[i] + "</li>"; 
       $(".answers > ul").append(listtag);
-    }
+    };
 
     $('.answerButton').click(function() {
       var chosenIndex = $(this).parent('li').attr('class');
       if (currentQuestion.correctAnswer === +chosenIndex) {
-        alert("Correct Answer ! click next to proceed!");
+        $('.correct').html("Correct Answer ! click next to proceed!");
       } else {
-        alert("Incorrect Answer! Try again!");
+        $('.correct').html("Incorrect Answer! Try again!");
       }
+
     });
+
+
   }
 
 });
