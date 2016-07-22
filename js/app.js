@@ -40,20 +40,24 @@ $(document).ready(function() {
   });
 
   $('.next').click(function(){
-    var nextQuestion = currentQuestionIndex ++;
-    $('.answers > ul').html("")
-    $('.correct').html("")
-    displayQuestion();
+    currentQuestionIndex++;
+    $('#question > h3').html("");
+    $('.answers > ul').html("");
+    $('.correct').html("");
+    if (currentQuestionIndex < allQuestions.length) {
+        displayQuestion();
+    } else {
+        alert("End of Game !!");
+    }
   });
 
 
   function displayQuestion() {
     var currentQuestion = allQuestions[currentQuestionIndex];
-
     $('#question > h3').html(currentQuestion.text);
     var possibleAnswers = currentQuestion.possibleAnswers;
     for (var i=0; i<possibleAnswers.length; i++){
-      var listtag = "<li class=\"" + i + "\"><button class = \"answerButton\"> </button>" + possibleAnswers[i] + "</li>"; 
+      var listtag = "<li class=\"" + i + "\"><button class = \"answerButton\"> </button>" + possibleAnswers[i] + "</li>";
       $(".answers > ul").append(listtag);
     };
 
