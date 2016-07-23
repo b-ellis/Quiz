@@ -33,6 +33,8 @@ $(document).ready(function() {
   var allQuestions = [question1, question2, question3, question4, question5];
   var currentQuestionIndex = 0;
 
+  $('.end').hide();
+
   $('.start-button').click(function(){
     $('.start').hide();
     $('#question').show();
@@ -47,12 +49,17 @@ $(document).ready(function() {
     if (currentQuestionIndex < allQuestions.length) {
         displayQuestion();
     } else {
-        alert("End of Game !!");
+        $('.next').hide();
+        $('.end').show();
     }
   });
-
+  
+  $('.newGame').click(function(){
+    restart();
+  });
 
   function displayQuestion() {
+    $('.next').show();
     var currentQuestion = allQuestions[currentQuestionIndex];
     $('#question > h3').html(currentQuestion.text);
     var possibleAnswers = currentQuestion.possibleAnswers;
@@ -71,8 +78,16 @@ $(document).ready(function() {
 
     });
 
-
   }
+
+  function restart() {
+    currentQuestionIndex = 0
+    while(currentQuestionIndex = 0) {
+      $('.next').show();
+    }
+    $('.end').hide();
+    $('.start').show();
+  };
 
 });
   //click event handler for answer choice {verify whether chosen answer is = correctAnswer in the question object}

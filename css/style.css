@@ -20,7 +20,6 @@ h2{
 	outline: none;
 }
 #question{
-	display: none;
 	margin: 150px;
 	text-align: center;
 }
@@ -47,4 +46,7 @@ button:focus{
 }
 h3{
 	margin: 100px;
+}
+.end{
+	text-align: -webkit-center;
 }
