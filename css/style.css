@@ -27,6 +27,7 @@ ul{
 	list-style: none;
 	padding: 10px;
 	display: inline-block;
+	text-align: left;
 }
 button{
 	font-size: medium;
@@ -45,8 +46,9 @@ button:focus{
 	background-color: mediumturquoise;
 }
 h3{
-	margin: 100px;
+	margin: 75px 100px 50px;
 }
 .end{
 	text-align: -webkit-center;
+	margin-top: -100px;
 }

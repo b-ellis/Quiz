@@ -32,6 +32,7 @@ $(document).ready(function() {
 
   var allQuestions = [question1, question2, question3, question4, question5];
   var currentQuestionIndex = 0;
+  var score = 0;
 
   $('.end').hide();
 
@@ -76,15 +77,16 @@ $(document).ready(function() {
         $('.correct').html("Incorrect Answer! Try again!");
       }
 
+      if (currentQuestion.correctAnswer === +chosenIndex)
+      score = ++score;
+    var percent = score/5;
+    var Percent = percent * 100 + "%"
+    $('.score').html(Percent);
     });
-
   }
 
   function restart() {
     currentQuestionIndex = 0
-    while(currentQuestionIndex = 0) {
-      $('.next').show();
-    }
     $('.end').hide();
     $('.start').show();
   };
